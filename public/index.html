@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Statues</title>
+
+  <!-- update the version number as needed -->
+  <script defer src="/__/firebase/9.22.0/firebase-app-compat.js"></script>
+  <!-- include only the Firebase features as you need -->
+  <script defer src="/__/firebase/9.22.0/firebase-auth-compat.js"></script>
+  <script defer src="/__/firebase/9.22.0/firebase-database-compat.js"></script>
+  <script defer src="/__/firebase/9.22.0/firebase-firestore-compat.js"></script>
+  <script defer src="/__/firebase/9.22.0/firebase-functions-compat.js"></script>
+  <script defer src="/__/firebase/9.22.0/firebase-messaging-compat.js"></script>
+  <script defer src="/__/firebase/9.22.0/firebase-storage-compat.js"></script>
+  <script defer src="/__/firebase/9.22.0/firebase-analytics-compat.js"></script>
+  <script defer src="/__/firebase/9.22.0/firebase-remote-config-compat.js"></script>
+  <script defer src="/__/firebase/9.22.0/firebase-performance-compat.js"></script>
+  <!-- 
+        initialize the SDK after all desired features are loaded, set useEmulator to false
+        to avoid connecting the SDK to running emulators.
+      -->
+  <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+</head>
+<script src="https://cdn.jsdelivr.net/npm/@harp.gl/components/ar-js/aframe/build/webxr-ar.js"></script>
+<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+<!-- we import arjs version without NFT but with marker + location based support -->
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+<body style="margin : 0px; overflow: hidden;">
+  <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+
+    <!-- <a-assets>
+        <a-asset-item id="firts-video-asset" src="./videos/flip_result.mp4"></a-asset-item>
+    </a-assets> -->
+
+    <a-marker type="pattern" preset="custom" url="./patterns/pattern-firts.patt" value='6'>
+      <a-video src="./videos/flip_result_android.mp4" width="1.5" height="1.5" rotation="-90 0 0" position="0 0 0" autoplay></a-video>
+    </a-marker>
+
+    <!-- use this <a-entity camera> to support multiple-markers, otherwise use <a-marker-camera> instead of </a-marker> -->
+    <a-entity camera></a-entity>
+    </a-scene>
+</body>
+</html>
