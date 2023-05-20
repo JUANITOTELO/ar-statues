@@ -31,10 +31,21 @@
 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 <body style="margin : 0px; overflow: hidden;">
   <a-scene markers_start vr-mode-ui="enabled: false" color-space="sRGB" renderer="colorManagement: true;" embedded
-    arjs='debugUIEnabled: false; sourceType: webcam; patternRatio: 0.85; trackingMethod: best;'> <!-- <a-assets>
-        <a-asset-item id="firts-video-asset" src="./videos/flip_result.mp4"></a-asset-item>
-    </a-assets> -->
-
+    arjs='debugUIEnabled: false; sourceType: webcam; patternRatio: 0.85; trackingMethod: best;'> 
+    <!-- <a-marker type="pattern" preset="custom" url="./patterns/pattern-second.patt">
+      <a-entity
+      position="0 0 0"
+      scale="0.1 0.1 0.1"
+      gltf-model="./3D_objects/statue_1.gltf"
+    ></a-entity>
+    </a-marker> -->
+    <!-- <a-marker type="pattern" preset="custom" url="./patterns/pattern-first.patt">
+      <a-entity
+      position="0 0 0"
+      scale="0.1 0.1 0.1"
+      gltf-model="./3D_objects/statue_2.gltf"
+    ></a-entity> -->
+    </a-marker>
     <a-marker type="pattern" preset="custom" url="./patterns/pattern-second.patt">
       <a-video src="./videos/compressed_result.mp4" width="1.4" height="1.4" rotation="-90 0 0" position="0 0 0"
         autoplay muted="true" id="video1"></a-video>
